@@ -1,0 +1,164 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.wrap { padding: 1.5rem 0; font-family: var(--font-sans, sans-serif); }
+.hero { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+.hero-title { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.hero-sub { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+.section-label { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); letter-spacing: .06em; text-transform: uppercase; margin: 1.25rem 0 .6rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; }
+.card-badge { display: inline-block; font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; }
+.card-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.card-model { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 6px; }
+.card-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.55; }
+.flow { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.flow-box { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 7px 12px; font-size: 12px; font-weight: 500; color: var(--color-text-primary); white-space: nowrap; }
+.flow-arrow { font-size: 14px; color: var(--color-text-tertiary); }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; }
+.info-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; }
+.info-card-title { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); margin-bottom: 8px; }
+.info-list { list-style: none; }
+.info-list li { font-size: 12px; color: var(--color-text-primary); padding: 3px 0; display: flex; gap: 7px; align-items: flex-start; line-height: 1.5; }
+.info-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.li-teal::before { background: #1D9E75; }
+.li-purple::before { background: #534AB7; }
+.li-amber::before { background: #BA7517; }
+.li-coral::before { background: #993C1D; }
+.novelty { background: #E1F5EE; border: 0.5px solid #9FE1CB; border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+.novelty-title { font-size: 12px; font-weight: 500; color: #085041; margin-bottom: 6px; }
+.novelty-items { display: flex; flex-wrap: wrap; gap: 6px; }
+.novelty-pill { background: #9FE1CB; color: #04342C; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
+.stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 1.25rem; }
+.stat { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: .75rem 1rem; text-align: center; }
+.stat-val { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+.stat-lbl { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+</style>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-title">SAIRA — Skin Analysis & Ingredient-aware Recommendation Agent</div>
+    <div class="hero-sub">A multimodal deep learning system that analyzes a face photo, reads skincare product ingredients, and recommends safe, effective products personalized to your skin concerns.</div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="stat-val">5</div><div class="stat-lbl">DL models</div></div>
+    <div class="stat"><div class="stat-val">3</div><div class="stat-lbl">Datasets</div></div>
+    <div class="stat"><div class="stat-val">6</div><div class="stat-lbl">Weeks</div></div>
+    <div class="stat"><div class="stat-val">1</div><div class="stat-lbl">Paper</div></div>
+  </div>
+
+  <div class="section-label">How it works — end to end</div>
+  <div class="flow">
+    <div class="flow-box">Face photo</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Skin analysis</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Concern scores</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Fusion layer</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Safe recommendation</div>
+  </div>
+  <div class="flow">
+    <div class="flow-box">Ingredient list</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">BioBERT + GNN</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">Ingredient embeddings</div>
+    <div class="flow-arrow" style="opacity:0">→</div>
+    <div class="flow-box" style="opacity:0">x</div>
+    <div class="flow-arrow" style="opacity:0">→</div>
+    <div class="flow-box" style="opacity:0">x</div>
+  </div>
+
+  <div class="section-label">The 5 DL modules</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-badge" style="background:#FAECE7;color:#712B13">Module 1</span>
+      <div class="card-title">Skin analysis</div>
+      <div class="card-model">ResNet50 / U-Net</div>
+      <div class="card-desc">Detects acne, redness, dark spots from face photo. Outputs severity scores per concern.</div>
+    </div>
+    <div class="card">
+      <span class="card-badge" style="background:#EEEDFE;color:#3C3489">Module 2</span>
+      <div class="card-title">Ingredient reading</div>
+      <div class="card-model">BioBERT</div>
+      <div class="card-desc">Reads ingredient text. Understands what each ingredient treats and how it works.</div>
+    </div>
+    <div class="card">
+      <span class="card-badge" style="background:#E1F5EE;color:#085041">Module 3</span>
+      <div class="card-title">Ingredient graph</div>
+      <div class="card-model">GAT / GraphSAGE</div>
+      <div class="card-desc">Models ingredient relationships — synergies, contraindications, irritation risks.</div>
+    </div>
+    <div class="card">
+      <span class="card-badge" style="background:#FAEEDA;color:#854F0B">Module 4</span>
+      <div class="card-title">Safety classifier</div>
+      <div class="card-model">MLP</div>
+      <div class="card-desc">Flags unsafe ingredient combos for your skin type. Filters risky products out.</div>
+    </div>
+    <div class="card">
+      <span class="card-badge" style="background:#F1EFE8;color:#444441">Module 5</span>
+      <div class="card-title">Fusion + ranking</div>
+      <div class="card-model">MLP</div>
+      <div class="card-desc">Combines all module outputs. Ranks products by effectiveness + safety score.</div>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="info-card">
+      <div class="info-card-title">Datasets used</div>
+      <ul class="info-list">
+        <li class="li-coral">ACNE04 — acne severity levels</li>
+        <li class="li-coral">Skin condition dataset — acne, redness, spots</li>
+        <li class="li-purple">Open Beauty Facts — product ingredients</li>
+        <li class="li-purple">Kaggle cosmetics — ingredient-concern mapping</li>
+        <li class="li-amber">CosDNA + EWG — safety labels (self-curated)</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Tech stack</div>
+      <ul class="info-list">
+        <li class="li-teal">PyTorch — all DL models</li>
+        <li class="li-teal">HuggingFace — BioBERT</li>
+        <li class="li-teal">PyTorch Geometric — GNN</li>
+        <li class="li-teal">Kaggle Notebooks — training (GPU)</li>
+        <li class="li-teal">Google Colab — experiments</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="novelty">
+    <div class="novelty-title">What makes SAIRA novel vs the 2024 paper</div>
+    <div class="novelty-items">
+      <span class="novelty-pill">Ingredient knowledge graph</span>
+      <span class="novelty-pill">Safety contraindication modeling</span>
+      <span class="novelty-pill">Personalized skin profiles</span>
+      <span class="novelty-pill">Explainable recommendations</span>
+      <span class="novelty-pill">Multi-concern detection</span>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="info-card">
+      <div class="info-card-title">Timeline — 6 weeks</div>
+      <ul class="info-list">
+        <li class="li-teal">Week 1–2 · Literature + datasets</li>
+        <li class="li-purple">Week 2–4 · Build all 5 modules</li>
+        <li class="li-amber">Week 4–5 · Fusion + experiments</li>
+        <li class="li-coral">Week 5–6 · Write + submit paper</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">Target output</div>
+      <ul class="info-list">
+        <li class="li-teal">Working end-to-end pipeline</li>
+        <li class="li-teal">Ablation study table</li>
+        <li class="li-teal">Explainability examples</li>
+        <li class="li-teal">Published research paper</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
